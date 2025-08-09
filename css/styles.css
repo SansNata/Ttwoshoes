@@ -1,0 +1,256 @@
+/* CSS for TTWOSHOESCARE - Main and Services */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Volkhov:wght@400;700&display=swap");
+
+:root {
+    --primary-color: #121212; /* Main dark background */
+    --secondary-color: #1e1e1e; /* Slightly lighter dark for cards/navbar */
+    --third-color: #f39c12; /* Orange accent */
+    --fourth-color: #f5f5f5; /* Light text color */
+    --font-heading: "Volkhov", serif;
+    --font-body: "Poppins", sans-serif;
+}
+
+/* --- Animation Keyframes --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Base Styles --- */
+body {
+    font-family: var(--font-body);
+    color: var(--fourth-color);
+    background-color: var(--primary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--fourth-color);
+}
+
+.bg-dark-alt {
+    background-color: #000;
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: var(--secondary-color);
+    padding: 0.5rem 0;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px -6px #000;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.navbar-brand-text {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.brand-sans { color: var(--fourth-color); }
+.brand-design { color: var(--third-color); }
+
+.nav-link {
+    color: var(--fourth-color) !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--third-color) !important;
+}
+
+/* --- Hero Section --- */
+#hero {
+    padding: 8rem 0;
+    background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)), url('https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    color: white;
+    overflow: hidden;
+}
+
+#hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+#hero p {
+    font-size: 1.25rem;
+    margin: 1rem 0;
+    animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+/* --- General Section & Animation --- */
+.section { padding: 5rem 0; }
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- About Section --- */
+#about img {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
+}
+
+#about img:hover {
+    transform: scale(1.03);
+}
+
+/* --- Services Section --- */
+#laundry .card, #restore .card {
+    border: 1px solid #333;
+    border-radius: 15px;
+    background-color: #2a2a2a;
+    box-shadow: none;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-align: center;
+    padding: 2rem;
+    height: 100%;
+}
+
+#laundry .card:hover, #restore .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(243, 156, 18, 0.5);
+}
+
+#laundry .card i, #restore .card i {
+    font-size: 3rem;
+    color: var(--third-color);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+#laundry .card:hover i, #restore .card:hover i { transform: scale(1.1); }
+#laundry .card-title, #restore .card-title { font-size: 1.5rem; font-weight: 600; }
+
+/* --- Pricelist Section --- */
+.pricelist-subtitle {
+    text-align: center;
+    font-weight: 600;
+    color: var(--third-color);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.price-card {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid #333;
+    height: 100%;
+}
+
+.price-card h4 {
+    font-family: var(--font-heading);
+    color: var(--third-color);
+    border-bottom: 2px solid var(--third-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.price-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.price-card ul li {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.table thead th {
+    color: var(--third-color);
+    border-bottom-width: 2px;
+}
+
+.table-bordered {
+    border-color: #444;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #000;
+    color: var(--fourth-color);
+    padding: 4rem 0 0 0;
+}
+
+.footer-heading {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.footer-text {
+    color: #adb5bd;
+    font-size: 0.9rem;
+}
+
+.footer-links li, .footer-contact li { margin-bottom: 0.75rem; }
+
+.footer-links a, .footer-contact a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.footer-links a:hover, .footer-contact a:hover {
+    color: var(--third-color);
+    text-decoration: none;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: var(--third-color);
+    width: 20px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.footer-social a {
+    color: var(--fourth-color);
+    font-size: 1.2rem;
+    margin-right: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    color: var(--third-color);
+    transform: scale(1.05);
+}
+.footer-social a i {
+    margin-right: 8px;
+}
+
+.footer .border-top { border-color: var(--secondary-color) !important; }
+.footer .copyright { color: #adb5bd; }  
