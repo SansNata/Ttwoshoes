@@ -92,6 +92,24 @@ h1, h2, h3, h4, h5, h6 {
     animation: fadeInUp 1s ease-out 0.8s both;
 }
 
+#hero .hero-location a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+#hero .hero-location a:hover {
+    color: var(--third-color);
+}
+
+#hero .hero-location i {
+    margin-right: 8px;
+    color: var(--third-color);
+}
+
+
 /* --- General Section & Animation --- */
 .section { padding: 5rem 0; }
 
@@ -124,8 +142,18 @@ h1, h2, h3, h4, h5, h6 {
     transform: scale(1.03);
 }
 
+#about .contact-email-link {
+    color: var(--third-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#about .contact-email-link:hover {
+    text-decoration: underline;
+}
+
 /* --- Services Section --- */
-#laundry .card, #restore .card {
+#services .card {
     border: 1px solid #333;
     border-radius: 15px;
     background-color: #2a2a2a;
@@ -136,56 +164,22 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
 }
 
-#laundry .card:hover, #restore .card:hover {
+#services .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 25px rgba(243, 156, 18, 0.5);
 }
 
-#laundry .card i, #restore .card i {
+#services .card i {
     font-size: 3rem;
     color: var(--third-color);
     margin-bottom: 1.5rem;
     transition: transform 0.3s ease;
 }
 
-#laundry .card:hover i, #restore .card:hover i { transform: scale(1.1); }
-#laundry .card-title, #restore .card-title { font-size: 1.5rem; font-weight: 600; }
+#services .card:hover i { transform: scale(1.1); }
+#services .card-title { font-size: 1.5rem; font-weight: 600; }
 
 /* --- Pricelist Section --- */
-.pricelist-subtitle {
-    text-align: center;
-    font-weight: 600;
-    color: var(--third-color);
-    margin-bottom: 2rem;
-    font-size: 2rem;
-}
-
-.price-card {
-    background-color: var(--secondary-color);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 1px solid #333;
-    height: 100%;
-}
-
-.price-card h4 {
-    font-family: var(--font-heading);
-    color: var(--third-color);
-    border-bottom: 2px solid var(--third-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-.price-card ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.price-card ul li {
-    margin-bottom: 0.75rem;
-    font-size: 1rem;
-}
-
 .table thead th {
     color: var(--third-color);
     border-bottom-width: 2px;
@@ -193,6 +187,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .table-bordered {
     border-color: #444;
+}
+
+.table td.category-cell,
+.table td.notes-cell {
+    vertical-align: middle;
+    text-align: center;
+    font-weight: 600;
+    color: var(--fourth-color);
+}
+
+.table td.category-cell {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--third-color);
 }
 
 /* --- Footer --- */
@@ -214,19 +222,37 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.9rem;
 }
 
-.footer-links li, .footer-contact li { margin-bottom: 0.75rem; }
+.footer-links li, .footer-contact li { margin-bottom: 1rem; }
 
 .footer-links a, .footer-contact a {
     color: #adb5bd;
     text-decoration: none;
     transition: color 0.3s ease;
     position: relative;
+    padding-bottom: 4px; /* Ruang untuk garis bawah */
+}
+
+/* Efek Garis Bawah Animasi */
+.footer-links a::after, .footer-contact a > span::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--third-color);
+    transition: width 0.4s ease-out;
 }
 
 .footer-links a:hover, .footer-contact a:hover {
-    color: var(--third-color);
-    text-decoration: none;
+    color: var(--fourth-color); /* Teks menjadi lebih terang saat disentuh */
 }
+
+/* Saat disentuh, garis bawah memanjang */
+.footer-links a:hover::after, .footer-contact a:hover > span::after {
+    width: 100%;
+}
+
 
 .footer-contact i {
     margin-right: 10px;
@@ -253,4 +279,4 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer .border-top { border-color: var(--secondary-color) !important; }
-.footer .copyright { color: #adb5bd; }  
+.footer .copyright { color: #adb5bd; }
