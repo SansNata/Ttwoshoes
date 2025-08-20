@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
 /* --- Hero Section --- */
 #hero {
     padding: 8rem 0;
-    background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)), url('https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)), url('./Images/Sepatu2.jpeg')   no-repeat center center/cover;
     color: white;
     overflow: hidden;
 }
@@ -132,7 +132,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --- About Section --- */
+/* --- About Section --- */
 #about img {
+    width: 85%; /* Adjust this percentage to make it smaller or larger */
+    display: block;
+    margin: 0 auto; /* This will center the image */
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: transform 0.4s ease;
